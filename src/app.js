@@ -12,6 +12,23 @@ window.onload = function() {
   let noun = ['jogger', 'racoon'];
   let extentions = ['.com', '.us', '.net', '.io'];
 
+  let combination = [];
+
+  for(let p=0; p < pronoun.length; p++){
+    for(let a=0; a < adj.length; a++){
+      for(let n=0; n < noun.length; n++){
+        for(let e=0; e < extentions.length; e++){
+          combination.push(pronoun[p] + adj[a] + noun[n] + extentions[e]);
+        }
+      }
+    }
+  }
+
+  let domain = combination[Math.floor(Math.random() * combination.length)];
+
+  /*
+  - Different Way -
+
    let result = [];
 
     for (let p of pronoun) {
@@ -26,7 +43,8 @@ window.onload = function() {
 
     let domain = result[Math.floor(Math.random() * result.length)];
 
-  /* Different way
+  - Different way -
+
   let randpro = pronoun[Math.floor(Math.random()*pronoun.length)];
   let randadj = adj[Math.floor(Math.random()*adj.length)];
   let rannoun = noun[Math.floor(Math.random()*noun.length)];
